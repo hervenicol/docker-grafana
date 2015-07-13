@@ -17,25 +17,25 @@ It means this container has:
 ## mountpoints
 
 Usefull mountpoints are:
-* _/etc/grafana/grafana.ini_ - Config file. Mount it if you want to customize your config.
-* _/var/lib/grafana_ - The Grafana database (sqlite). Mount this one for database persistency and backups.
-* _/var/log_ - All log files.
-    * _/var/log/grafana_ - Grafana log files, if you don't bother other logs.
-    * _/var/log/supervisor_ - init system log files, traces container's process start/stop/restart.
+* __/etc/grafana/grafana.ini__ - Config file. Mount it if you want to customize your config.
+* __/var/lib/grafana__ - The Grafana database (sqlite). Mount this one for database persistency and backups.
+* __/var/log__ - All log files.
+    * __/var/log/grafana__ - Grafana log files, if you don't bother other logs.
+    * __/var/log/supervisor__ - init system log files, traces container's process start/stop/restart.
 
 
 ## Ports
 
-Exposed port is _:3000_.
+Exposed port is __:3000__.
 This the Grafana interface web access.
 
 
 ## Included files
 
-* _build.sh_ - Builds a Docker image from the git tree.
-* _start.sh_ - Creates and runs your Grafana container.
-* _Dockerfile_ - The recipe used by docker to create the image.
-* _configfiles/_ - Additionnal files required for the image creation.
+* __build.sh__ - Builds a Docker image from the git tree.
+* __start.sh__ - Creates and runs your Grafana container.
+* __Dockerfile__ - The recipe used by docker to create the image.
+* __configfiles/__ - Additionnal files required for the image creation.
 
 
 ## First steps
