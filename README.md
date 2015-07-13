@@ -1,53 +1,44 @@
 # docker-grafana
-Docker container for Grafana
+##Docker container for Grafana
 
 Currently under early development, may not result in a functionnal container.
 
 
-# Why this image?
+## Why this image?
 
 I wanted to give access to a clean and well documented Grafana container, suitable for docker beginners as well as grafana beginners.
 
 It means this container has:
-- a public git repository
-- an up to date docker image
-- explanations on its structure and how to use
+* a public git repository
+* an up to date docker image
+* explanations on its structure and how to use
 
 
-# mountpoints
+## mountpoints
 
 Usefull mountpoints are:
-* /etc/grafana/grafana.ini
-	Config file. Mount it if you want to customize your config.
-* /var/lib/grafana
-	The Grafana database (sqlite). Mount this one for database persistency and backups.
-* /var/log
-	All log files.
-** /var/log/grafana
-	Grafana log files, if you don't bother other logs.
-** /var/log/supervisor
-	init system log files, traces container's process start/stop/restart.
+* _/etc/grafana/grafana.ini_ - Config file. Mount it if you want to customize your config.
+* _/var/lib/grafana_ - The Grafana database (sqlite). Mount this one for database persistency and backups.
+* _/var/log_ - All log files.
+    * _/var/log/grafana_ - Grafana log files, if you don't bother other logs.
+    * _/var/log/supervisor_ - init system log files, traces container's process start/stop/restart.
 
 
-# Ports
+## Ports
 
-Exposed port is :3000.
+Exposed port is _:3000_.
 This the Grafana interface web access.
 
 
-# Included files
+## Included files
 
-* build.sh
-	Builds a Docker image from the git tree.
-* start.sh
-	Creates and runs your Grafana container.
-* Dockerfile
-	The recipe used by docker to create the image.
-* configfiles/
-	Additionnal files required for the image creation.
+* _build.sh_ - Builds a Docker image from the git tree.
+* _start.sh_ - Creates and runs your Grafana container.
+* _Dockerfile_ - The recipe used by docker to create the image.
+* _configfiles/_ - Additionnal files required for the image creation.
 
 
-# First steps
+## First steps
 
 Here I should explain how to use this docker image and go straight to the point.
 
