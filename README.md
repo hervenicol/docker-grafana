@@ -1,5 +1,4 @@
 # docker-grafana
 Docker container for Grafana
 
-En cours de dev
-
+Currently under early development, may not result in a functionnal container.
