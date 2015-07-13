@@ -1,7 +1,8 @@
-MAINTAINER Herve Nicol
-
 # Based on a light and trusted image
 FROM debian:wheezy
+
+MAINTAINER Herve Nicol
+
 
 # Make sure system image is up to date
 RUN apt-get update
