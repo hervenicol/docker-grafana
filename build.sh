@@ -1,4 +1,13 @@
 #!/bin/bash
 
-docker build --force-rm=true -t hervenicol/grafana:2.0.2 .
+###################
+# Run this script to build a Docker image from the git tree.
+###################
+
+#### Configuration ####
+IMAGE_NAME="hervenicol/grafana"
+IMAGE_TAG="2.0.2"
+#### End configuration ####
+
+docker build --force-rm=true -t "$IMAGE_NAME":"$IMAGE_TAG" .
 
