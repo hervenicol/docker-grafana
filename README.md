@@ -40,6 +40,13 @@ This the Grafana interface web access.
 
 ## First steps
 
-Here I should explain how to use this docker image and go straight to the point.
+Documentation on how to have a simple graphing setup can be found here:
 
+https://github.com/hervenicol/Graphing-suite/wiki
+
+
+
+This image is meant to work with the influxdb container found here:
+
+https://registry.hub.docker.com/u/hervenicol/influxdb/
 
