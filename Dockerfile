@@ -28,6 +28,14 @@ rm /tmp/grafana.deb
 RUN sed -i -e 's/^\(\[supervisord\]\)$/\1\nnodaemon=true/' /etc/supervisor/supervisord.conf
 ADD configfiles/supervisor-grafana.conf /etc/supervisor/conf.d/grafana.conf
 
+## initial setup script
+USER grafana
+# add script
+ADD configfiles/generate_basic_grafana_config.sh /usr/local/bin/
+# tell script to run
+RUN touch /var/lib/grafana/please_do_initial_setup
+USER root
+
 # expose the Grafana daemon port
 EXPOSE 3000
 
