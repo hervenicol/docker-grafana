@@ -8,10 +8,12 @@
 IMAGE_NAME="hervenicol/grafana"
 IMAGE_TAG="2.0.2"
 CONT_NAME="grafana"
-EXPOSED_PORT="30001"
+PORT_WEB="3000"
+INFLUXDB_CONT_NAME="influxdb"
 #### End Configuration ####
 
-docker run -p "$EXPOSED_PORT":3000 -d -i -t \
+docker run -p "$PORT_WEB":3000 -d -i -t \
 	--name "$CONT_NAME" \
+	--link "$INFLUXDB_CONT_NAME:influxdb" \
 	"$IMAGE_NAME":"$IMAGE_TAG"
 
