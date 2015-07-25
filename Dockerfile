@@ -11,10 +11,11 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get upgrade -yq
 # Install required applications:
 #	supervisor, used to start our application(s)
 #	wget, to get the grafana archive
+#	sqlite3, to manipulate grafana data (I agree it would be better to use its API)
 #	+ various dependencies...
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -yq \
 	--no-install-recommends \
-	supervisor wget \
+	supervisor wget sqlite3 \
 	adduser libfontconfig libfreetype6 fontconfig-config ucf ttf-dejavu-core ttf-bitstream-vera ttf-freefont \
 	gsfonts-x11 gsfonts xfonts-utils fonts-freefont-ttf libfontenc1 libxfont1 x11-common xfonts-encodings
 
@@ -26,6 +27,14 @@ rm /tmp/grafana.deb
 # supervisord configuration
 RUN sed -i -e 's/^\(\[supervisord\]\)$/\1\nnodaemon=true/' /etc/supervisor/supervisord.conf
 ADD configfiles/supervisor-grafana.conf /etc/supervisor/conf.d/grafana.conf
+
+## initial setup script
+USER grafana
+# add script
+ADD configfiles/generate_basic_grafana_config.sh /usr/local/bin/
+# tell script to run
+RUN touch /var/lib/grafana/please_do_initial_setup
+USER root
 
 # expose the Grafana daemon port
 EXPOSE 3000
