@@ -6,7 +6,7 @@
 
 #### Configuration ####
 IMAGE_NAME="hervenicol/grafana"
-IMAGE_TAG="2.0.2"
+IMAGE_TAG="2.1.0"
 #### End configuration ####
 
 docker build --force-rm=true -t "$IMAGE_NAME":"$IMAGE_TAG" .
