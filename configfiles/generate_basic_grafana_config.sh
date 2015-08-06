@@ -25,7 +25,7 @@ done
 #wget -O- -q localhost:3000 | grep -ci grafana
 
 # Create "collectd" data_source
-sqlite3 /var/lib/grafana/grafana.db 'insert into data_source (org_id, version, type, name, access, url, password, user, database, basic_auth, is_default, created, updated) values ("1", "0", "influxdb_08", "collectd", "proxy", "http://'"$INFLUXDB_PORT_8086_TCP_ADDR:$INFLUXDB_PORT_8086_TCP_PORT"'", "root", "root", "collectd", "0", "1", date("now"), date("now") )' || echo "error, return code $?"
+sqlite3 /var/lib/grafana/grafana.db 'insert into data_source (org_id, version, type, name, access, url, password, user, database, basic_auth, is_default, created, updated) values ("1", "0", "influxdb", "collectd", "proxy", "http://'"$INFLUXDB_PORT_8086_TCP_ADDR:$INFLUXDB_PORT_8086_TCP_PORT"'", "root", "root", "collectd", "0", "1", date("now"), date("now") )' || echo "error, return code $?"
 
 # Don't run next time
 rm /var/lib/grafana/please_do_initial_setup
