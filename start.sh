@@ -6,7 +6,7 @@
 
 #### Configuration ####
 IMAGE_NAME="hervenicol/grafana"
-IMAGE_TAG="2.1.0"
+IMAGE_TAG="2.5.0"
 CONT_NAME="grafana"
 PORT_WEB="3000"
 INFLUXDB_CONT_NAME="influxdb"

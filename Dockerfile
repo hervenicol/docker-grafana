@@ -22,7 +22,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -yq \
 	gsfonts-x11 gsfonts xfonts-utils fonts-freefont-ttf libfontenc1 libxfont1 x11-common xfonts-encodings
 
 # Grafana install
-RUN wget -nv --no-check-certificate https://grafanarel.s3.amazonaws.com/builds/grafana_2.1.0_amd64.deb -O /tmp/grafana.deb && \
+RUN wget -nv --no-check-certificate https://grafanarel.s3.amazonaws.com/builds/grafana_2.5.0_amd64.deb -O /tmp/grafana.deb && \
 dpkg -i /tmp/grafana.deb && \
 rm /tmp/grafana.deb
 

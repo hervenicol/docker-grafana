@@ -3,7 +3,7 @@
 
 Currently under early development, may not result in a functionnal container.
 
-Contains Grafana 2.1.0
+Contains Grafana 2.5.0
 and connects to influxdb 0.9
 
 
